@@ -17,5 +17,27 @@ public class Calculator {
             return false;
         }
     }
+
+    public boolean ifTriangle2(Point point1, Point point2, Point point3){
+        double segmentA = lineSegmentLength(point1, point2);
+        double segmentB = lineSegmentLength(point1, point3);
+        double segmentC = lineSegmentLength(point2, point3);
+
+        if((segmentA > segmentB && segmentA > segmentC)
+            && segmentB + segmentC > segmentA){
+            System.out.println(segmentA + " " + (segmentB + segmentC));
+            return true;
+        } else if ((segmentB > segmentA && segmentB > segmentC)
+                && segmentA + segmentC > segmentB){
+            System.out.println(segmentB + " " + (segmentA + segmentC));
+            return true;
+        } else if ((segmentC > segmentA && segmentC > segmentB)
+                && segmentA + segmentB > segmentC){
+            System.out.println(segmentC + " " + (segmentB + segmentA));
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
